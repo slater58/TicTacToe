@@ -84,8 +84,11 @@ public class UI {
 
                     break;
             }
+            if (g.winCheck())
+            break;
             g.printGrid();
             if (g.checkFull()) {
+                System.out.println("No Winner");
                 break;
             }
         }
