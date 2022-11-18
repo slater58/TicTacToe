@@ -85,7 +85,7 @@ public class UI {
                     break;
             }
             if (g.winCheck())
-            break;
+                break;
             g.printGrid();
             if (g.checkFull()) {
                 System.out.println("No Winner");
@@ -93,6 +93,5 @@ public class UI {
             }
         }
         g.InitializeGrid();
-        menu();
     }
 }
