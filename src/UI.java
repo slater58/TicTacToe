@@ -1,16 +1,22 @@
 import java.util.Scanner;
 
 public class UI {
-    static Scanner in = new Scanner(System.in);
+    static Scanner in;
     static Grid g;
 
+    /**
+     * initializes the grid and opens the menu
+     */
     public static void InitializeGame() {
         g = new Grid();
-        g.InitializeGrid();
+        in = new Scanner(System.in);
         menu();
 
     }
 
+    /**
+     * Gives the players the option to play or quit
+     */
     public static void menu() {
         System.out.println("welcome to tic tac toe");
         boolean run = true;
@@ -31,6 +37,9 @@ public class UI {
         }
     }
 
+    /**
+     * edits the grid and breaks when there is a tie or someone wins
+     */
     public static void rungame() {
         int input;
         String turn;

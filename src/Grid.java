@@ -2,9 +2,11 @@ public class Grid {
     String[][] game = new String[3][3];
 
     public Grid() {
-
+        InitializeGrid();
     }
-
+    /**
+     * sets every value in the grid to be "*"
+     */
     public void InitializeGrid() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -13,6 +15,10 @@ public class Grid {
         }
     }
 
+    /**
+     * checks every possible win condition and returns true if either player wins
+     * @return
+     */
     public boolean winCheck() {
         String winner = null;
         for (int i = 1; i < 9; i++) {
@@ -54,7 +60,9 @@ public class Grid {
         return false;
 
     }
-
+    /**
+     * displays the Game array as a grid
+     */
     public void printGrid() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -64,6 +72,12 @@ public class Grid {
         }
     }
 
+    /**
+     * places a value in the game unless its already taken
+     * @param player the value of X or O 
+     * @param i row
+     * @param j column
+     */
     public void editGrid(String player, int i, int j) {
         if (game[i][j].equals("*"))
             game[i][j] = player;
@@ -71,7 +85,10 @@ public class Grid {
             System.out.println("already taken please enter a valid input");
         }
     }
-
+    /**
+     * checks to see if the game is completely filled
+     * @return
+     */
     public boolean checkFull() {
         boolean isFull = true;
         for (int i = 0; i < 3; i++) {
